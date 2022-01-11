@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy my nice code
     steps:
-    - name: Deploy to OVH hosting
-      uses: pitscher/ovh-deploy-hosting-action@v1
-      env:
-        OVH_HOSTING_USER: ${{ secrets.OVH_HOSTING_USER }}
-        OVH_HOSTING_PASSWORD: ${{ secrets.OVH_HOSTING_PASSWORD }}
-        OVH_HOSTING_DOMAIN: ssh.clusterXXX.hosting.ovh.net
-        REPOSITORY_NAME: hassler
-        REPOSITORY_URL: https://github.com/ralexhassle/hassler.git 
+      - name: Deploy to OVH hosting
+        uses: pitscher/ovh-deploy-hosting-action@v1
+        env:
+          OVH_HOSTING_USER: ${{ secrets.OVH_HOSTING_USER }}
+          OVH_HOSTING_PASSWORD: ${{ secrets.OVH_HOSTING_PASSWORD }}
+          OVH_HOSTING_DOMAIN: ${{ secrets.OVH_HOSTING_DOMAIN }}
+          REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME }}
+          REPOSITORY_URL: ${{ secrets.REPOSITORY_URL }}
