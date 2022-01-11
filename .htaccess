@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} !^hassler.fr\.com$ [NC,OR]
+    RewriteCond %{HTTPS} =off
+    RewriteRule ^(.*)$ https://hassler.fr/$1 [R=301,L]
+</IfModule>
+Options -Indexes
